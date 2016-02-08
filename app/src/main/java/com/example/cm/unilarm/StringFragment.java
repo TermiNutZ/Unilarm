@@ -1,7 +1,9 @@
 package com.example.cm.unilarm;
 
 import android.app.Activity;
+import android.app.ListFragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 /**
@@ -22,7 +25,7 @@ import android.widget.TextView;
  * Activities containing this fragment MUST implement the {@link OnFragmentInteractionListener}
  * interface.
  */
-public class StringFragment extends Fragment implements AbsListView.OnItemClickListener {
+public class StringFragment extends ListFragment implements AbsListView.OnItemClickListener {
 
     private OnFragmentInteractionListener mListener;
 
@@ -56,7 +59,7 @@ public class StringFragment extends Fragment implements AbsListView.OnItemClickL
 
         String[] arr = getResources().getStringArray(R.array.day_of_week_list);
         mAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_expandable_list_item_1, arr);
+                android.R.layout.simple_list_item_1, arr);
     }
 
     @Override
@@ -93,10 +96,20 @@ public class StringFragment extends Fragment implements AbsListView.OnItemClickL
     }
 
     @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        // TODO Auto-generated method stub
+        super.onListItemClick(l, v, position, id);
+
+        mListener.onFragmentInteraction(id);
+    }
+
+
+    @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (null != mListener) {
-            // Notify the active callbacks interface (the activity, if the
-            // fragment is attached to one) that an item has been selected.
+
+
+
             mListener.onFragmentInteraction(id);
         }
     }

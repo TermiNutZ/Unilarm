@@ -21,11 +21,14 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.example.cm.unilarm.MainActivity" >
+            android:parentActivityName=".MainActivity" >
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.cm.unilarm.MainActivity" />
+        </activity>
+        <activity android:name=".DayScheduleActivity" >
         </activity>
     </application>
 
