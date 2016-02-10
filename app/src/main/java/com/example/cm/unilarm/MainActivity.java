@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements StringFragment.On
     @Override
     public void onFragmentInteraction(long id) {
         Intent intent = new Intent(this, DayScheduleActivity.class);
+        intent.putExtra("Weekday", id + 1);
         startActivity(intent);
     }
 }

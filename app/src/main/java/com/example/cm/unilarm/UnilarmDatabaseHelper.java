@@ -27,7 +27,8 @@ public class UnilarmDatabaseHelper extends SQLiteOpenHelper {
                 "NAME TEXT, " +
                 "TEACHER TEXT); ");
 
-       insertClass(db, 1, 5, "Neural Network", "Madonnov AN");
+        insertClass(db, 1, 5, "Neural Network", "Madonnov AN");
+        insertClass(db, 2, 5, "Neural Network", "Madonnov AN");
     }
 
     @Override
