@@ -20,15 +20,6 @@ public class MainActivity extends AppCompatActivity implements StringFragment.On
         setSupportActionBar(toolbar);
 
         StringFragment fragment = (StringFragment) getFragmentManager().findFragmentById(R.id.fragment_string_list);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override

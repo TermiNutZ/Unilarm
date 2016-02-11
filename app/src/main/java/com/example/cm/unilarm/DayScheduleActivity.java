@@ -14,13 +14,21 @@ import android.widget.ListView;
 
 public class DayScheduleActivity extends AppCompatActivity {
 
+    private long weekday;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_schedule);
 
         Intent intent = getIntent();
-        long weekday = intent.getLongExtra("Weekday", 1);
+        weekday = intent.getLongExtra("Weekday", 1);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
 
         SQLiteOpenHelper unilarmDbHelper = new UnilarmDatabaseHelper(this);
         SQLiteDatabase db = unilarmDbHelper.getReadableDatabase();
@@ -59,7 +67,7 @@ public class DayScheduleActivity extends AppCompatActivity {
         {
             values[i] = new ClassModel();
             values[i].setNumber(i+1);
-            values[i].setName("None");
+            values[i].setName("");
             values[i].setTeacher("");
         }
     }
